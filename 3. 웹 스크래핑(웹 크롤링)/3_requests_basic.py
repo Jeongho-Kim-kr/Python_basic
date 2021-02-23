@@ -1,4 +1,5 @@
-import requests
+import requests # 웹의 데이터를 html 텍스트로 전부 긁어오는 패키지
+
 res = requests.get('http://google.com')
 res.raise_for_status() # 문제가 생기면 오류를 내는 가장 많이 사용하는 오류확인 코드 위 코드랑 쌍으로 씀
 

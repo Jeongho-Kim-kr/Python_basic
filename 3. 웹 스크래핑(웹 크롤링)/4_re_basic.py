@@ -1,3 +1,7 @@
+import re # 정규식을 통해 지정한 조건을 만족하는 데이터만 지정하게 해주는 패키지
+
+
+
 ## 정규식 내용 요약(w3school.com, python.re 검색)
 # 1. p = re.compile('원하는 형태')
 # 2. m = p.match('비교할 문자열'): 주어진 문자열의 처음부터 일치하는지 확인
@@ -26,7 +30,6 @@
 # IP 주소
 # 192.168.0.1
 
-import re
 # ca?e 한자리를 모름
 
 p = re.compile('ca.e') # re.complie: 변수에 문자열 조건을 넣어줌

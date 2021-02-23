@@ -1,7 +1,8 @@
-## Beautifulsoup4 기본 1
-import requests
-from bs4 import BeautifulSoup
+import requests # 웹의 데이터를 html 텍스트로 전부 긁어오는 패키지
+from bs4 import BeautifulSoup # html 객체에 접근해 주는 패키지
 
+
+## Beautifulsoup4 기본 1
 url = 'https://comic.naver.com/webtoon/weekday.nhn' # 네이버 웹툰
 res = requests.get(url)
 res.raise_for_status()
