@@ -2,11 +2,12 @@ import csv # csv파일을 이용하게 해주는 패키지
 import requests
 from bs4 import BeautifulSoup
 
+
 ## 네이버금용 코스피 상위종목 csv 저장
 url = 'https://finance.naver.com/sise/sise_market_sum.nhn?sosok='
 
 filename = '시가총액1-200.csv'
-f = open(filename, 'w', encoding = 'utf-8-sig', newline= '') # newline=''이면 자동 줄바꿈을 안하게 해준다.
+f = open(filename, 'w', encoding = 'utf-8-sig', newline= '') # newline=''이면 불필요한 줄바꿈을 안하게 해준다.
 writer = csv.writer(f) # csv 파일 만들기
 
 title = 'N	종목명	현재가	전일비	등락률	액면가	시가총액	상장주식수	외국인비율	거래량	PER	ROE'.split('\t')

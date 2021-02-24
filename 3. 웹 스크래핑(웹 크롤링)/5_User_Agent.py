@@ -1,3 +1,4 @@
+## User Agent: 유저가 사람임을 인식 시키는 코드
 ## User Agent 가 없으면 웹 사이트에서 침입으로 인색해 차단할 가능성이 있음
 
 # User Agent string을 검색해서 자신의 user agent를 가져옴

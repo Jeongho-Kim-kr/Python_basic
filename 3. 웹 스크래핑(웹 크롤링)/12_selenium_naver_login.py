@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 import time # 시간과 관련한 동작 패키지(time.sleep())
 
 
-## 네이버 로그인
+## 네이버 로그인(셀레니움 기본 응용)
 browser = webdriver.Chrome('./1 깃허브 업로드/python_basic/chromedriver/chromedriver.exe')
 
 # 1. 네이버 이동

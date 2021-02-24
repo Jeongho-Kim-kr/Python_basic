@@ -3,6 +3,23 @@ from selenium.webdriver.common.keys import Keys # 셀레니움에서 키보드 �
 
 
 ## 셀레니움(브라우저 자동화) 기본
+## 느리지만 동적 웹 페이지(움직임에 따라 데이터가 변하는 사이트) 스크래핑에 유용
+## 웹 페이지를 동작해 원하는 상태로 만든 후 requests가 현재 페이지의 html을 전부를 읽어와서 Beautifulsoup4에 넘긴다.
+## 로그인, 원하는 결과에 대한 필터링 등 어떤 동작을 해야 하는 경우 chromedriver.exe를 제어하여 해당 동작을 실행
+
+## .find_element_by_id('') id로 찾기 (elements로 하면 모든 element를 가져온다)
+## .find_element_by_class_name('') class name으로 찾기 (elements로 하면 모든 element를 가져온다)
+## .find_element_by_link_text('') 링크 text로 찾기 (elements로 하면 모든 element를 가져온다)
+## .find_element_by_xpath('') xpath로 찾기 (elements로 하면 모든 element를 가져온다)
+## .click() 클릭
+## .sent_keys() 글자 입력
+## .clear() 글자 지우기
+
+## 페이지가 넘어가는 로딩을 기다리는 기능은 13번 참조
+
+## 스크롤을 내리는 기능은 15번 참조
+## selenium with python에서 더 공부 가능
+
 browser = webdriver.Chrome('./1 깃허브 업로드/python_basic/chromedriver/chromedriver.exe')
 browser.get('http://naver.com') # 해당 주소로 이동
 

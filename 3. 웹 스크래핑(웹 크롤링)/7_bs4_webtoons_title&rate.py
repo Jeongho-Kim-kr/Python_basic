@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-## 네이버 웹툰 전체목록 가져오기
+## 네이버 웹툰 전체목록 가져오기(글자 긁는 기초 스크래핑)
 url = 'https://comic.naver.com/webtoon/weekday.nhn' # 네이버 웹툰
 res = requests.get(url)
 res.raise_for_status()

@@ -1,3 +1,5 @@
+## xpath란 Element의 경로 주소
+
 ## 모든 경로를 이용해서 호출 시
 /학교/학년/반/학생[1] 이지은
 /html/body/div/span/a...

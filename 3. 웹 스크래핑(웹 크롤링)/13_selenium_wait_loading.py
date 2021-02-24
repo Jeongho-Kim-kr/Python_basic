@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC # 셀레니움�
 from selenium.webdriver.common.by import By # 조건을 명시하기 위해 필요한 함수(By.XPATH, By.ID, By.CLASS_NAME, By.LINK_TEXT 등)
 
 
-## 네이버 항공권(로딩이 있을 때 해결법)
+## 네이버 항공권(로딩이 있을 때 지정한 조건이 충족할 때 까지 기다리는 기능)
 browser = webdriver.Chrome('./1 깃허브 업로드/python_basic/chromedriver/chromedriver.exe')
 browser.maximize_window() # 창 최대화
 

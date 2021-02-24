@@ -2,9 +2,9 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
+
 ## 쿠팡 노트북 정보 스크래핑(리스트에서 광고 제품을 제외)
 ## 여러 페이지(url)의 인터넷 쇼핑검색의 경우
-
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36'} # 쿠팡 서버가 거부하므로 유저가 접근하는 것처럼 시도
 
 for i in range(1, 6):
