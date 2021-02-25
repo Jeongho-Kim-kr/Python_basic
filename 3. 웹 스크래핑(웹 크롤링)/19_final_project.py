@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+import re
 
 ## 날씨, 헤드라인 뉴스, it 뉴스, 오늘의 영어회화 스크래핑
 def create_soup(url):
@@ -10,6 +10,9 @@ def create_soup(url):
     soup = BeautifulSoup(res.text, 'lxml')
     return soup
 
+def print_news(index, title, link):
+    print('{}. {}'.format(index+1, title))
+    print('  (링크): {}'.format(link))
 
 def scrape_weather():
     print('[오늘의 날씨]')
@@ -50,11 +53,46 @@ def scrape_headline_news():
     for index, news in enumerate(news_list):
         title = news.find('a').get_text().strip()
         link = url + news.find('a')['href']
-        print('{}. {}'.format(index+1, title))
-        print('  (링크): {}'.format(link))
+        print_news(index, title, link)
     print()
 
+def scrape_it_news():
+    print('[IT 뉴스]')
+    url = 'https://news.naver.com/main/list.nhn?mode=LS2D&mid=shm&sid1=105&sid2=230'
+    soup = create_soup(url)
+
+    news_list = soup.find('ul', attrs = {'class':'type06_headline'}).find_all('li', limit=3)
+    for index, news in enumerate(news_list):
+        
+        a_idx = 0 # 이미지가 있으면 다음 a 태그를 사용하기 위해 정의
+        img = news.find('img')
+        if img:
+            a_idx = 1 # img 태그가 있으면 1번 a 태그의 정보를 사용(0번은 img이다)
+        
+        title = news.find_all('a')[a_idx].get_text().strip()
+        link = news.find_all('a')[a_idx]['href']
+
+        print_news(index, title, link)
+    print()
+
+def scrape_english():
+    print('[오늘의 영어 회화]')
+    url = 'https://www.hackers.co.kr/?c=s_eng/eng_contents/I_others_english&keywd=haceng_submain_lnb_eng_I_others_english&logger_kw=haceng_submain_lnb_eng_I_others_english#;'
+    soup = create_soup(url)
+
+    sentences = soup.find_all('div', attrs={'id':re.compile('^conv_kor_t')})
+
+    print('(영어 지문)')
+    for sentence in sentences[len(sentences)//2:]: # 전체 문장의 절반만(영어, 한국어 지문만) 사용
+        print(sentence.get_text().strip())
+    print()
+
+    print('(한글 지문)')
+    for sentence in sentences[:len(sentences)//2]:
+        print(sentence.get_text().strip())
 
 if __name__ == '__main__':
     scrape_weather() # 오늘의 날씨 정보 가져오기
     scrape_headline_news() # 해드라인 뉴스 정보 가져오기
+    scrape_it_news() # IT 뉴스정보 가져오기
+    scrape_english() # 오늘의 영어 회화 가져오기
