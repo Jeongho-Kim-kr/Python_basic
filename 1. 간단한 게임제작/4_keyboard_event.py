@@ -67,7 +67,7 @@ while running:
     elif character_y_pos > screen_height - character_height:
         character_y_pos = screen_height - character_height
 
-    # 배경화면, 캐릭터 이미지 불러오기
+    # 배경화면, 캐릭터 이미지 불러오기(줄 순서대로 위에 표시됨)
     # screen.fill((0,0,255)) # 배경 RGB설정
     screen.blit(background, (0,0)) # 백그라운드 이미지 불러오기
     screen.blit(character, (character_x_pos, character_y_pos)) # 캐릭터 이미지 불러오기

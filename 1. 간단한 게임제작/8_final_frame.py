@@ -31,7 +31,7 @@ while running:
 
     ##### 4. 충돌 처리
 
-    ##### 5. 화면에 그리기
+    ##### 5. 화면에 그리기(줄 순서대로 위에 표시됨)
 
     pygame.display.update()
 

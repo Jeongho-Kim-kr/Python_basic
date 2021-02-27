@@ -87,7 +87,7 @@ while running:
         print('충돌했어요')
         running = False
 
-    ##### 5. 화면에 그리기
+    ##### 5. 화면에 그리기(줄 순서대로 위에 표시됨)
     screen.blit(background, (0,0))
     screen.blit(character, (character_x_pos, character_y_pos))
     screen.blit(enemy, (enemy_x_pos, enemy_y_pos))

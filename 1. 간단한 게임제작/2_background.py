@@ -23,7 +23,7 @@ while running:
         if event.type == pygame.QUIT: # 이벤트가 pygame.QUIT(창이 닫히는 이벤트)이면
             running = False # 위 while 루프가 종료되게 함(pygame이 종료됨)
 
-    # 배경화면, 캐릭터 이미지 불러오기
+    # 배경화면, 캐릭터 이미지 불러오기(줄 순서대로 위에 표시됨)
     # screen.fill((0,0,255)) # 배경 RGB설정
     screen.blit(background, (0,0)) # 백그라운드 이미지 불러오기
     
