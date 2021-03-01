@@ -39,7 +39,7 @@ character_y_pos = screen_height - character_height - stage_height
 ##### 이벤트 루프(이벤트가 항상 실행되어야 창이 꺼지지 않음)(반드시 필요)
 running = True
 while running:
-    dt = clock.tick(60)
+    dt = clock.tick(30)
 
     ##### 2. 이벤트 처리(키보드, 마우스 등)
     for event in pygame.event.get():

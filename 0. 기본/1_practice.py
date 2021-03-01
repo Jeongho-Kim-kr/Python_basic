@@ -27,6 +27,8 @@
 ## for 반복문
 ## while 반복문
 ## continue와 break
+## enumerate(인덱스와 함수값 사용)
+## 이중 for문 즉시 탈출(고급)
 ## for문 활용. 변수에 함수 반복 적용
 ## 퀴즈5 for, if
 ## 함수(입금, 출금 예시)
@@ -443,6 +445,52 @@ for student in range(1, 11):
         print('오늘 수업 여기까지. {0}는 교무실로 따라와.'.format(student))
         break
     print('{0}, 책을 읽어봐'.format(student))
+
+
+## enumerate(값의 순서를 이용할 때 사용, 해당 변수의 인덱스 값과 element 값을 앞의 벨류에 넣는다.)
+lst = ['가', '나', '다']
+
+for lst_idx, lst_val in enumerate(lst): # lst안의 인덱스(순서)와 값이 들어감
+    print(lst_idx, lst_val) # 해당 elemnt의 인덱스값, 값 순서로 출력
+
+
+## 이중 for문 즉시 탈출(고급)
+balls = [1, 2, 3, 4]
+weapons = [11, 22, 3, 44]
+
+# 이때 break는 안에 있는 for문만 탈출하므로 44만 출력 안하고 탈출 하지만 다시 위의 for문을 실행해 ball 4 와 안의 weapon이 출력된다
+for ball_idx, ball_val in enumerate(balls):
+    print('ball:', ball_val)
+    for weapon_idx, weapon_val in enumerate(weapons):
+        print('weapons: ', weapon_val)
+        if ball_val == weapon_val: # 충돌 체크
+            print('공과 무기가 충돌')
+            break
+
+# for문 즉시 탈출 문제 해결책
+# 따라서 안의 for에서 즉시 탈출을 명시하고 싶으면 안쪽 for문이 동작하지 않을 때(break) 넘어가는 else를 이용한다(안쪽 for문이 제대로 동작하면 else에 도착할 일이 없이 잘 작동된다). else에는 continue가 있어 else에 오게 되면 이후 break를 받고 전체가 종료된다.
+for ball_idx, ball_val in enumerate(balls):
+    print('ball:', ball_val)
+    for weapon_idx, weapon_val in enumerate(weapons):
+        print('weapons: ', weapon_val)
+        if ball_val == weapon_val: # 충돌 체크
+            print('공과 무기가 충돌')
+            break
+    else:
+        continue # 안쪽 for 문 조건이 맞지 않으면 continue. 바깥 for 문 계속 수행
+    print('바깥 for 문 break')
+    break # 안쪽 for 문에서 break를 만나면 여기로 진입 가능. 2중 for문을 한번에 탈출
+
+# 구조
+for 바깥조건:
+    바깥동작
+    for 안쪽조건:
+        안쪽 동작
+        if 충돌조건:
+            break
+    else:
+        continue
+    break
 
 
 ## for문 활용. 변수에 함수 반복 적용
