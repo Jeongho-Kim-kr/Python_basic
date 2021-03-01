@@ -3,8 +3,12 @@ from tkinter import * # GUI생성 패키지
 root = Tk()
 root.title('New GUI') # 이름
 root.geometry('640x480') # 가로 * 세로
-# root.geometry('640x480+300+100') # 가로 * 세로 + x좌표 + y좌표
 
-root.resizable(False, False) # x(너비), y(높이) 값 변경 불가(창 크기 변경 불가)
+
+
+def btncmd():
+    
+btn = Button(root, text='클릭', command=btncmd)
+btn.pack()
 
 root.mainloop() # 메인 루프가 계속 돌아야 지속됨
