@@ -19,7 +19,7 @@ def btncmd():
     print(chkvar.get()) # 0: 체크 해제, 1: 체크
     print(chkvar2.get())
     
-btn = Button(root, text='클릭', command=btncmd)
+btn = Button(root, text='선택', command=btncmd)
 btn.pack()
 
 root.mainloop() # 메인 루프가 계속 돌아야 지속됨

@@ -33,7 +33,7 @@ def btncmd():
     print(burger_var.get()) # 햄버거 중 선택된 라디오 항목의 값(value)을 출력
     print(drink_var.get()) # 음료 중 선택된 값을 출력
     
-btn = Button(root, text='클릭', command=btncmd)
+btn = Button(root, text='주문', command=btncmd)
 btn.pack()
 
 root.mainloop() # 메인 루프가 계속 돌아야 지속됨
