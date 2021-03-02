@@ -4,6 +4,7 @@ root = Tk()
 root.title('New GUI') # 이름
 root.geometry('640x480') # 가로 * 세로
 
+## Text 텍스트를 입력, 출력 할 수 있는 텍스트 박스, Entry 한줄 Text
 txt = Text(root, width=30, height=5) # 텍스트를 넣을 수 있는 위젯
 txt.pack() # 텍스트를 프로그램에 추가함
 txt.insert(END, '글자를 입력하세요') # '글자를 입력하세요' 글자를 텍스트 위젯에 추가함

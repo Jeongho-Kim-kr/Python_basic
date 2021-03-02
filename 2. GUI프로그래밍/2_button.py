@@ -3,6 +3,7 @@ from tkinter import * # GUI생성 패키지
 root = Tk()
 root.title('New GUI') # 이름
 
+## Button 누를 수 있는 버튼(누를 시 동작하는 함수를 지정 가능)
 btn1 = Button(root, text = '버튼1') # 버튼을 정의
 btn1.pack() # 버튼을 프로그램에 추가함(모든 위젯은 .pack으로 집어 넣어야 한다)
 

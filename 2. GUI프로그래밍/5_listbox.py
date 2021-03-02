@@ -4,6 +4,7 @@ root = Tk()
 root.title('New GUI') # 이름
 root.geometry('640x480') # 가로 * 세로
 
+## Listbox 여러 항목의 메뉴를 출력
 listbox = Listbox(root, selectmode='extended', height=0) # 여러 값의 리스트 목록을 제공하는 위젯, selectmode가 single이면 한개만 선택 가능 extended면 여러개 같이 선택 가능, height 크기 만큼 위젯 크기를 지정 0이면 모두 보이는 크기
 # listbox = Listbox(root, selectmode='single', height=3)
 listbox.insert(0, '사과')

@@ -4,6 +4,7 @@ root = Tk()
 root.title('New GUI') # 이름
 root.geometry('640x480') # 가로 * 세로
 
+## Label 프로그램에 텍스트, 사진 등을 추가
 label1 = Label(root, text='안녕하세요') # 레이블(들어가는 그래픽 이경우 text)
 label1.pack() # 레이블을 프로그램에 추가함
 
