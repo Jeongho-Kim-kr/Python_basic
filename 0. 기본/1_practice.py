@@ -1,3 +1,4 @@
+## 점프 투 파이썬 https://wikidocs.net/book/1
 ## 파이썬 기본 문법 https://www.youtube.com/watch?v=kWiCuklohdY (나도코딩 파이썬 기본)
 ## 목차
 
