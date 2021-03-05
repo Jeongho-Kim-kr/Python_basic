@@ -23,6 +23,7 @@
 ## 튜플
 ## 집합(set) 중복 안됨, 순서 없음
 ## 자료구조의 변경
+## zip(두 리스트 원소들 짝지어 함치기)
 ## 퀴즈 4 랜덤 추출, range로 숫자 생성
 ## if 조건문
 ## for 반복문
@@ -290,6 +291,9 @@ print(num_list)
 num_list.reverse() # 리스트내 역정렬
 print(num_list)
 
+num_list1 = reversed(num_list) # 기존 리스트(num_list)에 영향 없이 역정렬
+print(num_list1)
+
 num_list.clear() # 리스트내 지우기
 print(num_list)
 
@@ -365,6 +369,18 @@ print(menu, type(menu))
 
 menu = set(menu)
 print(menu, type(menu))
+
+
+## zip(두 리스트 원소들 짝지어 함치기)
+kor = ['사과', '바나나', '오렌지']
+eng = ['apple', 'banana', 'orange']
+print(list(zip(kor, eng))) # [('사과', 'apple'), ('바나나', 'banana'), ('오렌지', 'orange')] 두 리스트를 각 원소끼리 튜플로 묶어서 합친다
+
+mixed = [('사과', 'apple'), ('바나나', 'banana'), ('오렌지', 'orange')]
+print(list(zip(*mixed))) # 합친걸 한 리스트 내에 두 그룹의 튜플로 분리한다.
+kor2, eng2 = zip(*mixed) # 분리한 후 바로 각각에 튜플로 집어넣는다
+print(kor2) # ('사과', '바나나', '오렌지')
+print(eng2) # ('apple', 'banana', 'orange')
 
 
 ## 퀴즈 4 랜덤 추출, range로 숫자 생성

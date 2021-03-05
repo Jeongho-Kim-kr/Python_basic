@@ -1,18 +1,64 @@
 import tkinter.ttk as ttk
+import tkinter.messagebox as msgbox # 메시지 박스
 from tkinter import * # GUI생성 패키지
+from tkinter import filedialog # 파일 관련 함수
 
 root = Tk()
 root.title('New GUI') # 이름
 
-## 이미지 합치기 프로그램(레이아웃)
+## 이미지 합치기 프로그램(기본 기능)
+
+## 버튼 기본 기능동작 함수 추가
+# 파일 추가
+def add_file():
+    files = filedialog.askopenfilenames(title='이미지 파일을 선택하세요', \
+        filetypes=(('PNG 파일', '*.png'), ('모든 파일', '*.*')), \
+        initialdir='C:/') # 파일 찾기 창을 열고 오픈시 파일 경로를 가져옴, filetypes 찾기 창에서 보일 파일 타입 설정, initialdir 최초경로를 C:/ 경로로 보여줌
+
+    # 사용자가 선택한 파일 목록
+    for file in files:
+        list_file.insert(END, file)
+    
+# 선택 삭제
+def del_file():
+    # print(list_file.curselection())
+    for index in reversed(list_file.curselection()):  # 처리가 앞부터 되므로, 앞이 먼저 삭제되면 뒤의 인덱스가 변경되고 이상한게 삭제된다. 따라서 뒤부터 삭제를 실시한다.
+        list_file.delete(index)
+
+# 저장 경로(폴더)
+def browse_dest_path():
+    folder_selected = filedialog.askdirectory() # 폴더 경로를 선택 경로를 가져옴(dir)
+    if folder_selected == '': # 사용자가 취소를 누를 때 아무 동작을 안함
+        return
+    # print(folder_selected)
+    txt_dest_path.delete(0, END)
+    txt_dest_path.insert(0, folder_selected)
+
+# 시작
+def start():
+    # 각 옵션들 값을 확인
+    print('가로넓이: ', cmb_width.get())
+    print('간격: ', cmb_space.get())
+    print('포맷: ', cmb_format.get())
+
+    # 파일 목록 확인
+    if list_file.size() == 0:
+        msgbox.showwarning('경고', '이미지 파일을 추가하세요')
+        return
+    
+    # 저장 경로 확인
+    if len(txt_dest_path.get()) == 0:
+        msgbox.showwarning('경고', '저장 경로를 선택하세요')
+        return
+
 ## 파일 프레임(파일 추가, 선택 삭제)
 file_frame = Frame(root)
 file_frame.pack(fill='x', padx=5, pady=5)
 
-btn_add_file = Button(file_frame, padx=5, pady=5, width=12, text='파일추가')
+btn_add_file = Button(file_frame, padx=5, pady=5, width=12, text='파일추가', command=add_file)
 btn_add_file.pack(side='left')
 
-btn_del_file = Button(file_frame, padx=5, pady=5, width=12, text='선택삭제')
+btn_del_file = Button(file_frame, padx=5, pady=5, width=12, text='선택삭제', command=del_file)
 btn_del_file.pack(side='right')
 
 
@@ -35,7 +81,7 @@ path_frame.pack(fill='x', padx=5, pady=5, ipady=5)
 txt_dest_path = Entry(path_frame)
 txt_dest_path.pack(side='left', fill='x', expand=True, padx=5, pady=5, ipady=4) # ipady 엔트리 높이 변경
 
-btn_dest_path = Button(path_frame, text='찾아보기', width=10)
+btn_dest_path = Button(path_frame, text='찾아보기', width=10, command=browse_dest_path)
 btn_dest_path.pack(side='right', padx=5, pady=5)
 
 
@@ -92,7 +138,7 @@ frame_run.pack(fill='x', padx=5, pady=5)
 btn_close = Button(frame_run, padx=5, pady=5, text='닫기', width=12, command=root.quit)
 btn_close.pack(side='right', padx=5, pady=5)
 
-btn_start = Button(frame_run, padx=5, pady=5, text='시작', width=12)
+btn_start = Button(frame_run, padx=5, pady=5, text='시작', width=12, command=start)
 btn_start.pack(side='right', padx=5, pady=5)
 
 root.resizable(False, False) # x(너비), y(높이) 값 변경 불가(창 크기 변경 불가)
