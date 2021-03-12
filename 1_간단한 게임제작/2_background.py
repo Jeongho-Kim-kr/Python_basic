@@ -13,7 +13,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('New Game') # 게임 이름
 
 # 배경 이미지 불러오기
-background = pygame.image.load('1 깃허브 업로드/python_basic/1. 간단한 게임제작/background.png')
+background = pygame.image.load('1 깃허브 업로드/Python_basic/1_간단한 게임제작/background.png')
 
 # 이벤트 루프(이벤트가 항상 실행되어야 창이 꺼지지 않음)(반드시 필요)
 running = True # 게임이 진행중인가?

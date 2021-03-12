@@ -19,7 +19,7 @@ btn4.pack()
 btn5 = Button(root, fg='red', bg='yellow', text='버튼=5') # fg 폰트색, bg 버튼색
 btn5.pack()
 
-photo = PhotoImage(file='1 깃허브 업로드/python_basic/2. GUI프로그래밍/img.png') # PhotoImage 사진 파일 불러오기
+photo = PhotoImage(file='1 깃허브 업로드/Python_basic/2_GUI프로그래밍/img.png') # PhotoImage 사진 파일 불러오기
 btn6 = Button(root, image = photo)
 btn6.pack()
 

@@ -13,10 +13,10 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('New Game') # 게임 이름
 
 # 배경 이미지 불러오기
-background = pygame.image.load('1 깃허브 업로드/python_basic/1. 간단한 게임제작/background.png')
+background = pygame.image.load('1 깃허브 업로드/Python_basic/1_간단한 게임제작/background.png')
 
 # 캐릭터(스프라이트) 불러오기
-character = pygame.image.load('1 깃허브 업로드/python_basic/1. 간단한 게임제작/character.png')
+character = pygame.image.load('1 깃허브 업로드/Python_basic/1_간단한 게임제작/character.png')
 character_size = character.get_rect().size # 이미지의 크기를 구함
 character_width = character_size[0] # [0]이미지의 가로 크기
 character_height = character_size[1] # [1]이미지의 세로 크기
