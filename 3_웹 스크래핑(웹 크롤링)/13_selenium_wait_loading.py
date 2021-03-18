@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By # 조건을 명시하기 위해 필�
 
 
 ## 네이버 항공권(로딩이 있을 때 지정한 조건이 충족할 때 까지 기다리는 기능)
-browser = webdriver.Chrome('./1 깃허브 업로드/python_basic/chromedriver/chromedriver.exe')
+browser = webdriver.Chrome(r'C:\Users\KJH\OneDrive - 인하대학교\0 정리\1 깃허브 업로드\chromedriver\chromedriver.exe')
 browser.maximize_window() # 창 최대화
 
 url ='https://flight.naver.com/flights/'

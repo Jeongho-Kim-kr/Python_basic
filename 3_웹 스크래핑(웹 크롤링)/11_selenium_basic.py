@@ -20,7 +20,7 @@ from selenium.webdriver.common.keys import Keys # 셀레니움에서 키보드 �
 ## 스크롤을 내리는 기능은 15번 참조
 ## selenium with python에서 더 공부 가능
 
-browser = webdriver.Chrome('./1 깃허브 업로드/python_basic/chromedriver/chromedriver.exe')
+browser = webdriver.Chrome(r'C:\Users\KJH\OneDrive - 인하대학교\0 정리\1 깃허브 업로드\chromedriver\chromedriver.exe')
 browser.get('http://naver.com') # 해당 주소로 이동
 
 elem = browser.find_element_by_class_name('link_login') # 해당 클래스(로그인) 선택

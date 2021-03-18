@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 ## 구글무비(동적 사이트: 동작을 해야 다음 정보가 생성되는 사이트) 셀레니움으로 동작 후 그 페이지(lxml) 받아서 크롤링
 ## 크롬화면을 띄우지 않고 동작시키는 headless 기능은 16번 참조(처음 시험 동작은 15번으로 하고 반복 동작 시 16번으로 빠르게 실시)
-browser = webdriver.Chrome('./1 깃허브 업로드/python_basic/chromedriver/chromedriver.exe')
+browser = webdriver.Chrome(r'C:\Users\KJH\OneDrive - 인하대학교\0 정리\1 깃허브 업로드\chromedriver\chromedriver.exe')
 browser.maximize_window()
 
 ## 스크롤 파트

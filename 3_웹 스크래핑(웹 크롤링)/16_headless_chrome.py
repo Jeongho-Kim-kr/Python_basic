@@ -13,7 +13,7 @@ options.headless = True # webdriver.ChromeOptions.headless = True (크롬 백그
 options.add_argument('window-size=1920x1080') # 백그라운드서 동작하는 브라우저 크기를 지정
 options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36') # user-agent에 headless크롬이 남지 않게 직접 지정해주는 옵션
 
-browser = webdriver.Chrome('./1 깃허브 업로드/python_basic/chromedriver/chromedriver.exe', options=options) # 위에서 저장한 heawdless 옵션이 들어감
+browser = webdriver.Chrome(r'C:\Users\KJH\OneDrive - 인하대학교\0 정리\1 깃허브 업로드\chromedriver\chromedriver.exe', options=options) # 위에서 저장한 heawdless 옵션이 들어감
 browser.maximize_window()
 
 url = 'https://play.google.com/store/movies/collection/cluster?clp=0g4XChUKD3RvcHNlbGxpbmdfcGFpZBAHGAQ%3D:S:ANO1ljJvXQM&gsr=ChrSDhcKFQoPdG9wc2VsbGluZ19wYWlkEAcYBA%3D%3D:S:ANO1ljK7jAA&hl=ko&gl=US'
